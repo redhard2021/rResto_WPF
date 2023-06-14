@@ -1,0 +1,59 @@
+﻿<Window x:Class="RedResto.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="Transparent"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Height="420" Width="580" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True" >
+
+    <Border CornerRadius="30" MouseDown="MoveWindow">
+        <Border.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/background1.jpg"/>
+        </Border.Background>
+        <Grid>
+            <Image Source="/windows/tnLogo.png"  Width="150" Height="150" VerticalAlignment="Top" HorizontalAlignment="Left"></Image>
+            <Rectangle Fill="#FF004848" Width="580" Height="50" Margin="0,320,0,50"></Rectangle>
+            <Rectangle Fill="#FF004848" Width="580" Height="100" VerticalAlignment="Top" Margin="0,320,0,0" >
+                <Rectangle.RadiusX>25</Rectangle.RadiusX>
+                <Rectangle.RadiusY>25</Rectangle.RadiusY>
+            </Rectangle>
+
+            <PasswordBox
+                KeyDown="EnterPressed"
+                Width="280"
+                Foreground="White"
+                Margin="51,356,249,39"
+                x:Name="PasswordBox"
+                materialDesign:HintAssist.HelperText="Presione Ingresar o pulse Enter"
+                materialDesign:HintAssist.Hint="Contraseña"
+                materialDesign:TextFieldAssist.HasClearButton="True" MaxLength="8" FontSize="16"/>
+
+            <Button
+                Width="120"
+                Height="50"
+                Click="Login"
+                Content="Ingresar"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignPaperDarkButton}"
+                ToolTip="Resource name: MaterialDesignPaperDarkButton" Margin="398,346,62,24" Foreground="#DDFFFFFF" BorderBrush="#FF013838" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF086969" Offset="0"/>
+                        <GradientStop Color="#FF032525" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+    </Border>
+
+</Window>

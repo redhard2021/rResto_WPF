@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="background1.jpg" />
+    <None Remove="tn_black.png" />
+    <None Remove="windows\profile.png" />
+    <None Remove="windows\tnLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="background1.jpg" />
+    <Resource Include="tn_black.png" />
+    <Resource Include="windows\profile.png" />
+    <Resource Include="windows\tnLogo.png" />
+  </ItemGroup>
+
+</Project>
